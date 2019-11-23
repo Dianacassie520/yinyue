@@ -24,10 +24,12 @@ private  MediaPlayer mediaPlayer=new MediaPlayer();
         Button Start=(Button)findViewById(R.id.buttonStart);
         Button Pause =(Button)findViewById(R.id.buttonPause);
         Button Stop=(Button)findViewById(R.id.buttonStop);
+        SeekBar SeekBar=(SeekBar)findViewById(R.id.seekBar);
 
         Start.setOnClickListener((View.OnClickListener) this);
         Pause.setOnClickListener((View.OnClickListener) this);
         Stop.setOnClickListener((View.OnClickListener) this);
+        SeekBar.setOnSeekBarChangeListener((android.widget.SeekBar.OnSeekBarChangeListener) this);
         if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
